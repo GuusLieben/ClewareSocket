@@ -18,3 +18,6 @@ This application is built for fun and serves no specific usage. If you wish to e
 Links back to this repository are not required though appreciated.
 
 Any pull requests will be reviewed seriously, if you want to contribute, please do!
+
+## Layout
+![Layout](TrafficLightImpl.png)
