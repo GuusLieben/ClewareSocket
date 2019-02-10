@@ -28,12 +28,6 @@
             <version>1.0.2</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.usb4java</groupId>-->
-            <!--<artifactId>usb4java-javax</artifactId>-->
-            <!--<version>1.3.0</version>-->
-        <!--</dependency>-->
-
         <dependency>
             <groupId>org.hid4java</groupId>
             <artifactId>hid4java</artifactId>

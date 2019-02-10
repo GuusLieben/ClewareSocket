@@ -6,6 +6,7 @@ public class Main {
   private static Thread thread = new Thread(worker);
 
   public static void main(String[] args) throws InterruptedException {
+
     worker.setThread(thread);
     thread.start();
     thread.join();

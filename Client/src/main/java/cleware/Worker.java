@@ -5,8 +5,10 @@ import javafx.fxml.*;
 import javafx.scene.*;
 import javafx.stage.*;
 import org.slf4j.*;
+import org.slf4j.Logger;
 
 import java.util.*;
+import java.util.logging.*;
 
 public class Worker extends Application implements Runnable {
 
