@@ -1,15 +1,17 @@
 package cleware;
 
-import cleware.driver.*;
-import com.sun.corba.se.spi.orbutil.threadpool.*;
+import javafx.application.*;
+import javafx.fxml.*;
+import javafx.scene.*;
+import javafx.stage.*;
 import org.slf4j.*;
 
-public class Worker implements Runnable {
+import java.util.*;
+
+public class Worker extends Application implements Runnable {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Worker.class);
-  public TrafficLight controller;
   private Thread thread;
-  private SocketServer server = new SocketServer();
 
   void setThread(Thread thread) {
     this.thread = thread;
@@ -23,8 +25,33 @@ public class Worker implements Runnable {
     LOGGER.debug("ThreadGroup:\t{}", thread.getThreadGroup().getName());
     LOGGER.debug("ThreadId:\t\t{}\n", thread.getId());
 
-    controller = TrafficLightFactory.createNewInstance();
-    LOGGER.debug("<<Opening Socket :5815>>");
-    server.open();
+    launch();
+  }
+
+  @Override
+  public void start(Stage stage) throws Exception {
+    int[] size = {320, 500};
+
+    LOGGER.debug("<<Loading stage>>\n");
+
+    Parent root =
+        FXMLLoader.load(
+            Objects.requireNonNull(getClass().getClassLoader().getResource("cleware.fxml")));
+    stage.setTitle("Cleware USB-Ampel 902579");
+    stage.setScene(new Scene(root, size[0], size[1]));
+    stage.setMinWidth(size[0]);
+    stage.setMinHeight(size[1]);
+    stage.setMaxWidth(size[0]);
+    stage.setMaxHeight(size[1]);
+
+    stage.show();
+
+    System.out.println();
+    LOGGER.debug("Initialized Stage:\t{}\n", stage.getTitle());
+  }
+
+  @Override
+  public void stop() {
+    Main.client.close();
   }
 }
