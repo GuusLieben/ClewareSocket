@@ -1,0 +1,12 @@
+HIDDeviceInfo [
+	path=\\?\hid#vid_0d50&pid_0008#6&fe7dbe1&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030},
+	vendor_id=3408,
+	product_id=8,
+	serial_number=63813,
+	release_number=106,
+	manufacturer_string=Cleware GmbH,
+	product_string=USB-Ampel,
+	usage_page=65440,
+	usage=1,
+	interface_number=-1
+]

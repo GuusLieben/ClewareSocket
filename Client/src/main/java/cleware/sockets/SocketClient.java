@@ -17,7 +17,7 @@ public class SocketClient {
   public SocketClient() {
     try {
       LOGGER.debug("<<Opening socket listener>>");
-      client = new Socket("192.168.2.122", 5815);
+      client = new Socket("localhost", 5815);
       output = new DataOutputStream(client.getOutputStream());
       input = new DataInputStream(client.getInputStream());
       System.out.println("Output open");
